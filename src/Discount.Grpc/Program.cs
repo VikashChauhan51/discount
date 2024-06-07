@@ -1,3 +1,4 @@
+using Discount.Grpc.Interceptors;
 using Discount.Grpc.Services.v1;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGrpc(options =>
 {
     options.EnableDetailedErrors = true;
+    options.Interceptors.Add<ExceptionInterceptor>();
 });
 builder.Services.AddGrpcReflection();
 var app = builder.Build();
