@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/descriptor.proto";
+import "protos/v1/types/types.proto";
+
+option csharp_namespace = "Discount.Core.protos.v1.api";
+
+ package Discount.Core;
+ 
+ service DiscountServiceCore {
+	rpc GetDiscount (GetDiscountRequest) returns (CouponModel);
+	rpc CreateDiscount (CreateDiscountRequest) returns (CouponModel);
+	rpc UpdateDiscount (UpdateDiscountRequest) returns (CouponModel);
+	rpc DeleteDiscount (DeleteDiscountRequest) returns (DeleteDiscountResponse);
+}
