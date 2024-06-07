@@ -6,6 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Grpc.AspNetCore" Version="2.63.0" />
+		<PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.63.0" />
+	</ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Discount.Core\Discount.Core.csproj" />
   </ItemGroup>
