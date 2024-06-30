@@ -1,5 +1,8 @@
+using Discount.Application;
 using Discount.Grpc.Interceptors;
 using Discount.Grpc.Services.v1;
+using Discount.Infrastructure;
+using Ecart.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,12 @@ builder.Services.AddGrpc(options =>
     options.Interceptors.Add<ExceptionInterceptor>();
 });
 builder.Services.AddGrpcReflection();
+
+builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddDaprClient();
+builder.Services.AddDaprServices();
+await builder.Services.AddInfrastructureServices(builder.Configuration);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

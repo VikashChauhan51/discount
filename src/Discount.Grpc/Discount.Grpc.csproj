@@ -11,8 +11,8 @@
 		<PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.63.0" />
 	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Discount.Core\Discount.Core.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Discount.Application\Discount.Application.csproj" />
+	</ItemGroup>
 
 </Project>
